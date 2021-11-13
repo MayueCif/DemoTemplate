@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Stacking",
+  "classifications": ["web", "api"],
+  "identity": "stacking.web.tmpl",
+  "name": "Stacking Web Api",
+  "shortName": "stack.tmpl",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "Stacking.Web",
+  "preferNameDirectory": true,
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(!SeparateRouteHandler)",
+          "exclude": ["DemoHandler.cs"]
+        }
+      ]
+    }
+  ],
+  "symbols": {
+    "Framework": {
+      "type": "parameter",
+      "description": "The target .net framework for the project.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "net6.0",
+          "description": "Target net6.0"
+        },
+        {
+          "choice": "net5.0",
+          "description": "Target net5.0"
+        }
+      ],
+      "replaces": "net6.0",
+      "defaultValue": "net6.0"
+    },
+    "UseAuthorize": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "description": "this application add authorize."
+    },
+    "SeparateRouteHandler": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "description": "route handler use a separate file."
+    },
+    "IsLast": {
+      "type": "computed",
+      "value": "(Framework == \"net6.0\")"
+    }
+  },
+  "primaryOutputs": [
+    {
+      "path": "Stacking.Web.csproj"
+    }
+  ],
+  "postActions": [
+    {
+      "description": "Restore NuGet packages required by this project.",
+      "manualInstructions": [
+        {
+          "text": "Run 'dotnet restore'"
+        }
+      ],
+      "actionId": "210D431B-A78B-4D2F-B762-4ED3E3EA9025",
+      "continueOnError": true
+    }
+  ]
+}

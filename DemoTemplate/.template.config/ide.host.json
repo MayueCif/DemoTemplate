@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json.schemastore.org/vs-2017.3.host",
+  "icon": "WebAPI.png",
+  "symbolInfo": [
+    {
+      "id": "Framework",
+      "name": {
+        "text": ".net framework"
+      },
+      "description": {
+        "text": ".net framework for the project"
+      },
+      "isVisible": true,
+      "defaultValue": "net6.0"
+    },
+    {
+      "id": "UseAuthorize",
+      "name": {
+        "text": "the project use authorize"
+      },
+      "isVisible": true
+    },
+    {
+      "id": "SeparateRouteHandler",
+      "name": {
+        "text": "separate route handler file"
+      },
+      "invertBoolean": false,
+      "isVisible": true
+    }
+  ]
+}

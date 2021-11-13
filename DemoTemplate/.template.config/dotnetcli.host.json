@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json.schemastore.org/dotnetcli.host",
+  "symbolInfo": {
+    "Framework": {
+      "longName": "framework"
+    },
+    "UseAuthorize": {
+      "longName": "use-authorize",
+      "shortName": "au"
+    },
+    "SeparateRouteHandler": {
+      "longName": "separate-route-handler",
+      "shortName": "separate"
+    }
+  }
+}
